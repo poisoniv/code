@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from models import Product
+from models import product
 from google.appengine.ext import ndb
 import logging
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # This is main page of the site
-	qry = Product.query(Product.productname == "basketball")
+	qry = product.query(product.productname == "basketball")
 	logging.info("products:")
 	logging.info(qry)
 	tommy="2peas"

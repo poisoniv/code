@@ -2,5 +2,6 @@ indexes:
 - kind: product
   ancestor: no
   properties:
-  - name: name
+  - name: productname
+    direction: desc
 

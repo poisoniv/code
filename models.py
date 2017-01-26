@@ -2,5 +2,5 @@
 
 from google.appengine.ext import ndb
 
-class Product(ndb.Model):
+class product(ndb.Model):
     productname = ndb.StringProperty()

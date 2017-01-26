@@ -4,7 +4,7 @@ threadsafe: true
 
 handlers:
 - url: /.*
-  script: views.application
+  script: views.app
 
 libraries:
 - name: jinja2

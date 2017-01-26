@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from models import Product
 from google.appengine.ext import ndb
+import logging
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ app = Flask(__name__)
 def index():
     # This is main page of the site
 	qry = Product.query(Product.productname >= 'babe')
-	print("does this work with appengine?")
+	logging.info("does this work with appengine?")
 
 	return render_template("index.html", **locals())
 

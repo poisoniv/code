@@ -10,8 +10,7 @@ def index():
     # This is main page of the site
 	qry = Product.query(Product.productname >= 'babe')
 
-		
-    return render_template("index.html",**locals())
+	return render_template("index.html", **locals())
 
 
 @app.route("/product_query")

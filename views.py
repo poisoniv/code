@@ -8,7 +8,10 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # This is main page of the site
-    return render_template("index.html")
+	qry = Product.query(Product.productname >= 'babe')
+
+		
+    return render_template("index.html",**locals())
 
 
 @app.route("/product_query")

@@ -28,10 +28,10 @@ def product_query():
 	payload = []
 	for prd in qry:
 		this_el = {"label":"product name", "value":prd.productname}
-		payload.append( this_el)
+		payload.append(this_el)
 		
 		logging.info(prd.productname)
-    return json.dumps(payload)
+		return json.dumps(payload)
 
 
 if __name__ == "__main__":

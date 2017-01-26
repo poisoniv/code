@@ -10,7 +10,8 @@ app = Flask(__name__)
 def index():
     # This is main page of the site
 	qry = Product.query(Product.productname >= 'babe')
-	loggin.info("products:")
+	logging.info("products:")
+	tommy="2peas"
 	for prd in qry:
 		logging.info(prd.productname)
 	

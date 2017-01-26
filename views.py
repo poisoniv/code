@@ -9,6 +9,7 @@ app = Flask(__name__)
 def index():
     # This is main page of the site
 	qry = Product.query(Product.productname >= 'babe')
+	print("does this work with appengine?")
 
 	return render_template("index.html", **locals())
 
@@ -21,4 +22,4 @@ def product_query():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

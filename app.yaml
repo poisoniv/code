@@ -6,10 +6,11 @@ threadsafe: true
 
 handlers:
 - url: /.*
-  script: views.py
+  script: views.application
 
 libraries:
 - name: flask
   version: latest
 - name: jinja2
   version: latest
+  

@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # This is main page of the site
-	qry = Product.query(Product.productname >= 'babe')
+	qry = Product.query(Product.productname == "basketball")
 	logging.info("products:")
 	tommy="2peas"
 	for prd in qry:

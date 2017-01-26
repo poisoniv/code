@@ -9,8 +9,6 @@ handlers:
   script: views.application
 
 libraries:
-- name: flask
-  version: latest
 - name: jinja2
   version: latest
   

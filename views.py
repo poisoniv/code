@@ -10,7 +10,10 @@ app = Flask(__name__)
 def index():
     # This is main page of the site
 	qry = Product.query(Product.productname >= 'babe')
-	logging.info("does this work with appengine?")
+	loggin.info("products:")
+	for prd in qry:
+		logging.info(prd.productname)
+	
 
 	return render_template("index.html", **locals())
 

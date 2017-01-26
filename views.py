@@ -11,6 +11,7 @@ def index():
     # This is main page of the site
 	qry = Product.query(Product.productname == "basketball")
 	logging.info("products:")
+	logging.info(qry)
 	tommy="2peas"
 	for prd in qry:
 		logging.info(prd.productname)

@@ -26,9 +26,8 @@ def product_query():
 	logging.info(qry)
 	tommy="2peas"
 	payload = []
-	for prd in qry:
-		this_el = {"label":"product name", "value":prd.productname}
-		payload.append(this_el)
+	for prd in qry:		
+		payload.append(prd.productname)
 		
 		logging.info(prd.productname)
 		return payload

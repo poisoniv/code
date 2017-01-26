@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from models import product
 from google.appengine.ext import ndb
 import logging
+import json
 
 app = Flask(__name__)
 
@@ -26,10 +27,10 @@ def product_query():
 	tommy="2peas"
 	payload = []
 	for prd in qry:
-		payload += [{"label","product name"}]
+		payload += {"label":"product name", "value":prd.productname}
 		
 		logging.info(prd.productname)
-    return "some json payload"
+    return json.dumps(payload)
 
 
 if __name__ == "__main__":

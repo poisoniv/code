@@ -8,22 +8,27 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # This is main page of the site
-	qry = product.query(product.productname >= "babe")
-	logging.info("products:")
-	logging.info(qry)
-	tommy="2peas"
-	for prd in qry:
-		logging.info(prd.productname)
+
 	
 
-	return render_template("index.html", **locals())
+	return render_template("index.html)
 
 
 @app.route("/product_query")
 def product_query():
     # This will be the endpoint for querying GCP DataStore
     # This will take the results from the query and create the JSON needed for the text box
+	
+	    # This is main page of the site
+	qry = product.query(product.productname >= "babe")
+	logging.info("products:")
+	logging.info(qry)
+	tommy="2peas"
+	payload = []
+	for prd in qry:
+		payload += [{"label","product name"}]
+		
+		logging.info(prd.productname)
     return "some json payload"
 
 

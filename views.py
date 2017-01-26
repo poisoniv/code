@@ -30,7 +30,7 @@ def product_query():
 		payload.append(prd.productname)
 		
 		logging.info(prd.productname)
-		return json.dumps(payload)
+	return json.dumps(payload)
 
 
 if __name__ == "__main__":

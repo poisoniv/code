@@ -1,6 +1,6 @@
 indexes:
-- kind: product-id
+- kind: product
   ancestor: no
   properties:
-  - product-name: name
+  - name: name
 

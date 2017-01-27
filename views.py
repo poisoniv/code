@@ -23,7 +23,6 @@ def product_query():
     payload = []
 
     for prd in qry:
-        payload.append(prd.productname)
         logging.info(prd.productname)
         data = {"title": prd.productname}
         payload.append(data)

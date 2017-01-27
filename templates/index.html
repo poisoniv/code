@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GCP Autocomplete Demo</title>
+    <title>John Henise - GCP AC Demo</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/autocomplete.css')}}" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 <body>
-below this is my product list {{ tommy }} <br><br>
 
-{% for product in qry %}
-{{ product.productname }} <br>
-{% endfor %}
+    <div class="container">
+
+        below this is my product list {{ tommy }} <br><br>
+
+        {% for product in qry %}
+        {{ product.productname }} <br>
+        {% endfor %}
+
+        <input class="auto" type="text" placeholder="Product Description"/>
+
+    </div>
+
+
+
+<!--scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/static/scripts/autocomplete.js"></script>
+<script src="/static/scripts/main.js"></script>
 
 </body>
 </html>

@@ -19,7 +19,7 @@ def product_query():
     search_term = request.args.get('s')
     payload = []
     if search_term:
-        qry = product.query(product.productname >= search_term)
+        qry = product.query(product.productname >= search_term, limit=10)
 
         logging.info("products:")
         logging.info(qry)

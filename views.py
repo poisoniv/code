@@ -1,8 +1,10 @@
+import logging
+import json
+
 from flask import Flask, render_template, url_for, request
 from models import product
 from google.appengine.ext import ndb
-import logging
-import json
+
 
 app = Flask(__name__)
 

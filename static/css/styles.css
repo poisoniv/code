@@ -1,36 +1,33 @@
-html{
+body, html {
+    height:100%;
     font-size: 18px;
     font-family: 'Fire Sans', sans-serif;
 }
 
 .auto{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    width:100%;
-    max-width: 100%;
+    font-size: 18px;
+    width: 500px;
     line-height: 30px;
     padding: 5px;
+    outline: none;
     border: 1px solid #ddd;
     transition: border-width 0.2s ease;
-    outline: none;
 }
+
 .search-container{
+    width:500px;
+    margin:auto;
     position: absolute;
     width: 500px;
-    height: 42px;
+    line-height: 30px;
     z-index: 15;
     top: 50%;
     left: 50%;
     margin: -100px -30px -20px -250px;
-    background-color: #fff;
-    -moz-box-shadow: 0 0 3px #ccc;
-    -webkit-box-shadow: 0 0 3px #ccc;
-    box-shadow: 0 0 3px #ccc;
+    padding: 5px;
 }
 
-.search-container:hover{
+.auto:hover{
     -moz-box-shadow: 0 0 10px #ccc;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc;

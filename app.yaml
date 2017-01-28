@@ -9,7 +9,13 @@ handlers:
 libraries:
 - name: jinja2
   version: latest
+- name: MySQLdb
+  version: "latest"
 
 builtins:
 - remote_api: on
   
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: gcp-ac:us-east1:autocomplete-db
+    CLOUDSQL_USER: root
+    CLOUDSQL_PASSWORD: Wiggle12

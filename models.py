@@ -1,6 +1,8 @@
-# models.py
+from flask_sqlalchemy import SQLAlchemy
 
-from google.appengine.ext import ndb
+SQLALCHEMY_DATABASE_URI = "mysql+mysqldb://root@/productcatalog?unix_socket=/cloudsql/gcp-ac:autocompelte-db"
+db = SQLAlchemy(app)
 
-class product(ndb.Model):
-    productname = ndb.StringProperty()
+
+class product(db.Model):
+    productname = db.Column(db.String(255))

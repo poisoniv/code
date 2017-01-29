@@ -1,12 +1,21 @@
-import logging
 import json
 
 from flask import Flask, render_template, url_for, request
-from models import product
-from google.appengine.ext import ndb
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import literal
+import pymysql
 
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@104.198.68.242/productcatalog'
+db = SQLAlchemy(app)
+
+
+class Product(db.Model):
+    __tablename__ = 'products'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
 
 
 @app.route("/")
@@ -19,14 +28,10 @@ def product_query():
     search_term = request.args.get('s')
     payload = []
     if search_term:
-        qry = product.query(product.productname >= search_term).fetch(limit=10)
-
-        logging.info("products:")
-        logging.info(qry)
+        qry = Product.query.filter(Product.name.contains(search_term)).limit(10).all()
 
         for prd in qry:
-            logging.info(prd.productname)
-            data = {"title": prd.productname}
+            data = {"title": prd.name}
             payload.append(data)
 
     return json.dumps(payload)

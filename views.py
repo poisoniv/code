@@ -9,7 +9,7 @@ import pymysql
 app = Flask(__name__)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@104.198.68.242/productcatalog'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root@/productcatalog?unix_socket=/gcp-ac:autocomplete_db1'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root@localhost/productcatalog?unix_socket=/gcp-ac:autocomplete_db1'
 db = SQLAlchemy(app)
 
 

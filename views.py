@@ -8,7 +8,7 @@ import pymysql
 
 app = Flask(__name__)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@104.198.68.242/productcatalog'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Wiggle12@104.198.68.242/productcatalog'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:Wiggle12@localhost/productcatalog?unix_socket=/cloudsql/gcp-ac:us-central1:autocomplete-db1'
 db = SQLAlchemy(app)
 
@@ -29,6 +29,7 @@ def product_query():
     search_term = request.args.get('s')
     payload = []
     if search_term:
+        #qry = Product.query.filter(Product.name.like(search_term+'%')).limit(10).all()
         qry = Product.query.filter(Product.name.contains(search_term)).limit(10).all()
 
         for prd in qry:

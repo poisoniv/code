@@ -18,4 +18,4 @@ builtins:
 env_variables:
     CLOUDSQL_CONNECTION_NAME: gcp-ac:us-east1:autocomplete-db
     CLOUDSQL_USER: root
-    CLOUDSQL_PASSWORD:
+    CLOUDSQL_PASSWORD:''

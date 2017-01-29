@@ -11,8 +11,6 @@ libraries:
   version: latest
 - name: MySQLdb
   version: "latest"
-- name: pymysql
-  version: "latest"
 - name: sqlalchemy
   version: "latest"
 

@@ -29,8 +29,8 @@ def product_query():
     search_term = request.args.get('s')
     payload = []
     if search_term:
-        #qry = Product.query.filter(Product.name.like(search_term+'%')).limit(10).all()
-        qry = Product.query.filter(Product.name.contains(search_term)).limit(10).all()
+        qry = Product.query.filter(Product.name.like(search_term+'%')).limit(10).all()
+        #qry = Product.query.filter(Product.name.contains(search_term)).limit(10).all()
 
         for prd in qry:
             data = {"title": prd.name}
